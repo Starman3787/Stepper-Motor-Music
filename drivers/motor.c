@@ -34,3 +34,18 @@ void initMotors()
     GPIO_E_ODR = 0;
     GPIO_F_ODR;
 }
+
+void toggleMotor(char gpio, uint8_t pin)
+{
+    switch (gpio)
+    {
+        case 'E': {
+            GPIO_E_ODR ^= (0b1 << pin);
+            return;
+        }
+        case 'F': {
+            GPIO_F_ODR ^= (0b1 << pin);
+            return;
+        }
+    }
+}
