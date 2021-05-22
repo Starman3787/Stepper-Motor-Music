@@ -46,7 +46,6 @@ LFLAGS += -T$(LSCRIPT)
 AS_SRC = ./startup.S
 C_SRC = ./main.c
 C_SRC += ./drivers/motor.c
-C_SRC += ./music_player.c
 C_STC += ./systick.c
 
 INCLUDE = -I./
