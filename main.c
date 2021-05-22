@@ -25,6 +25,8 @@ uint16_t calculateNoteEnd(uint16_t duration)
 
 int main()
 {
+    initSysTick();
+
     initMotors();
 
     uint16_t nextStateChangeDue[] = {
