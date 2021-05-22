@@ -19,5 +19,18 @@
 
 void initMotors()
 {
-    RCC_AHB1ENR = 0b110000;
+    RCC_AHB1ENR |= (0b1 << 4);
+    RCC_AHB1ENR |= (0b1 << 5);
+
+    GPIO_E_MODER |= (0b01 << (9 * 2));
+    GPIO_E_MODER |= (0b01 << (11 * 2));
+    GPIO_E_MODER |= (0b01 << (13 * 2));
+    GPIO_F_MODER |= (0b01 << (13 * 2));
+    GPIO_F_MODER |= (0b01 << (14 * 2));
+
+    GPIO_E_OTYPER = 0;
+    GPIO_F_OTYPER = 0;
+
+    GPIO_E_ODR = 0;
+    GPIO_F_ODR;
 }
